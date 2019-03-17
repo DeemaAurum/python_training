@@ -1,21 +1,22 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
+from selenium.webdriver.android.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-import unittest, time, re
+import time, unittest
 
-class UntitledTestCase(unittest.TestCase):
+class test_add_group(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(30)
         self.base_url = "https://www.katalon.com/"
         self.verificationErrors = []
         self.accept_next_alert = True
     
-    def test_untitled_test_case(self):
+    def test_test_add_group(self):
         driver = self.driver
         driver.get("http://localhost/addressbook/")
         driver.find_element_by_name("user").clear()
